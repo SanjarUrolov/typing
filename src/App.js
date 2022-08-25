@@ -22,7 +22,7 @@ function App() {
               </span>
             } */}
 
-          if (inputText[index] === value && inputText > 0) {
+          if (inputText[index] === value) {
             return (
               <span style={{ color: "green" , fontWeight :800 ,  }} key={index}>
                 {value}
