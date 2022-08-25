@@ -1,15 +1,14 @@
 import React, { useState } from "react";
 import "./style.css";
 
-let text = `reakt interfaol foydalanuvchi interfeyslarni qiyinchiliksiz yaratish imkonini beradi. ilovangizdagi har bir holat uchun oddiy ko'rinishni loyihalashtiring va  react sizning ma'lumotlaringizni faqat o'zgartirgan tarkibiy qismlarni belgilab ularni samarali ravishda yangilaydi.
+let text = `Reakt interfaol foydalanuvchi interfeyslarni qiyinchiliksiz yaratish imkonini beradi. ilovangizdagi har bir holat uchun oddiy ko'rinishni loyihalashtiring va  react sizning ma'lumotlaringizni faqat o'zgartirgan tarkibiy qismlarni belgilab ularni samarali ravishda yangilaydi.
 deklarativ ko'rinishlar sizning kodingizni oldindan bashorat qilish va xatoliklarni onsonroq aniqlashga yordam beradi.`;
 const myArr = text.toLowerCase().split("");
 
 function App() {
-  const [inputText, setInputText] = useState("");
-
+  const [inputText , setInputText] = useState("");
   const handleChange = (e) => {
-    setInputText(e.target.value);
+    setInputText(e.target.value.toLowerCase());
   };
   return (
     <div className="app">
