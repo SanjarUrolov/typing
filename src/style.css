@@ -22,10 +22,11 @@
     text-align: center;
     outline: none;
     font-size: 22px;
+    border: 1px solid gray;
 }
 
 .app form input::placeholder {
-    opacity: 0.4;
+    opacity: 0.1;
     font-size: 22px;
     color: darkcyan;
 }
