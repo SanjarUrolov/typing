@@ -1,49 +1,39 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import "./style.css";
 
 let text = `React interfaol foydalanuvchi interfeyslarni qiyinchiliksiz yaratish imkonini beradi. Ilovangizdagi har bir holat uchun oddiy ko'rinishni loyihalashtiring va  react sizning ma'lumotlaringizni faqat o'zgartirgan tarkibiy qismlarni belgilab ularni samarali ravishda yangilaydi.
 Deklarativ ko'rinishlar sizning kodingizni oldindan bashorat qilish va xatoliklarni onsonroq aniqlashga yordam beradi.`;
 const myArr = text.toLowerCase().split("");
-
+console.log(myArr.length);
+let count=0
 function App() {
   const [inputText, setInputText] = useState("");
-  const [date, setDate]=useState(60)
-  console.log(date)
+  // const [date, setDate]=useState(60)
+  // console.log(date)
   const handleChange = (e) => {
     setInputText(e.target.value.toLowerCase());
   };
   
-  // let date = 60;
- let a=setInterval(()=>{
+  let date = 60;
+ setInterval(()=>{
       if (date > 0 && inputText) 
       {date--
-        document.getElementById("date").innerHTML =
+        spanDate.current.innerHTML =
            date + " soniya";
     }
-    // if(date<=0){
-    //   date=60
-    // }
   },1000)
-  clearInterval(a)
-  let count=0;
+  
+  count=0;
+  let spanDate=useRef(null)
   return (
     <div className="app">
-      <h1><span class="date" id="date">
+      <h1><span class="date" ref={spanDate}>
          60 soniya
       </span>
       </h1>
       
-      {/* <button onClick={a()}>Click</button> */}
       <div className="text">
         {myArr.map((value, index) => {
-          {
-            /* if(inputText > 0){
-          <span style={{ color: "black" , fontWeight:700 }} key={index}>
-                {value}
-              </span>
-            } */
-          }
-
           if (inputText[index] === value) {
                  count++;
             return (
@@ -51,7 +41,8 @@ function App() {
                 {value}
               </span>
             );
-          } else if (inputText[index] !== value) {
+          } 
+          else  {
             return (
               <span style={{ color: "black", opacity: "0.5" }} key={index}>
                 {value}
@@ -69,7 +60,7 @@ function App() {
           placeholder="Start typing. . . "
         />
       </form>
-      <h2>{count}</h2>
+      <h2>{Math.floor((count*100)/myArr.length)}%</h2>
     </div>
   );
 }
