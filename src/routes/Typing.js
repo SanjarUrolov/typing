@@ -66,11 +66,10 @@ let navigate=useNavigate()
         <input
           type="text"
           value={inputText || ""}
-          onInput={handleChange}
+          onChange={handleChange}
           placeholder="Start typing. . . "
         />
       </form>
-      <h2>{Math.floor((count*100)/res)}%</h2>
     </div>
   )
     }

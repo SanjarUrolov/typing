@@ -17,9 +17,10 @@
     align-items: center;
     justify-content: center;
    font-size: 30px;
-   margin: auto;
-
+   margin: auto auto 15px auto;
+    
 }
+
 .app form {
     width: 60%;
     margin: auto;
@@ -44,11 +45,7 @@
     font-size: 22px;
     color: darkcyan;
 }
-.app h1{
-    font-size: 40px;
-    padding: 15px;
-    text-align: center;
-}
+
 .text {
     width: 81%;
     height: auto;
