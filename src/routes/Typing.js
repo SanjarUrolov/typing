@@ -1,14 +1,15 @@
 import React, { useEffect, useRef, useState } from "react";
 import {useNavigate} from 'react-router-dom'
 
-let text = `React interfaol foydalanuvchi interfeyslarni qiyinchiliksiz yaratish imkonini beradi.Ilovangizdagi har bir holat uchun oddiy ko'rinishni loyihalashtiring va react sizning ma'lumotlaringizni faqat o'zgartirgan tarkibiy qismlarni belgilab ularni samarali ravishda yangilaydi.
+let text = `React interfaol foydalanuvchi interfeyslarni qiyinchiliksiz yaratish imkonini beradi. Ilovangizdagi har bir holat uchun oddiy ko'rinishni loyihalashtiring va react sizning ma'lumotlaringizni faqat o'zgartirgan tarkibiy qismlarni belgilab ularni samarali ravishda yangilaydi.
 Deklarativ ko'rinishlar sizning kodingizni oldindan bashorat qilish va xatoliklarni onsonroq aniqlashga yordam beradi.`;
 const myArr = text.toLowerCase().split("");
 // console.log(myArr.length);
-
+let res=myArr.length;
+console.log(res);
 function Typing() {
   const [inputText, setInputText] = useState("");
-  const [counter, setCounter]=useState(40);
+  const [counter, setCounter]=useState(5);
  let count=0;
   let spancounter=useRef(null);
 let navigate=useNavigate()
@@ -21,7 +22,7 @@ let navigate=useNavigate()
     spancounter.current.innerHTML =
               counter + " soniya";
               if(counter === 0){
-                navigate('result', {state:count})
+                navigate('result', {state:{count:count , myArr:myArr}})
               }
   };
     
@@ -69,7 +70,7 @@ let navigate=useNavigate()
           placeholder="Start typing. . . "
         />
       </form>
-      <h2>{Math.floor((count*100)/myArr.length)}%</h2>
+      <h2>{Math.floor((count*100)/res)}%</h2>
     </div>
   )
     }
