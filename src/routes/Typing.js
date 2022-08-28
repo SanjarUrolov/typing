@@ -38,7 +38,7 @@ let navigate=useNavigate()
   return(
     <div className="app">
       <div class="counter" ref={spancounter}>
-         40 soniya
+         30 soniya
       </div>
 
       
