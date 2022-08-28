@@ -9,7 +9,7 @@ let res=myArr.length;
 console.log(res);
 function Typing() {
   const [inputText, setInputText] = useState("");
-  const [counter, setCounter]=useState(5);
+  const [counter, setCounter]=useState(30);
  let count=0;
   let spancounter=useRef(null);
 let navigate=useNavigate()
