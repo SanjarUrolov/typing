@@ -4,9 +4,10 @@ import {useNavigate} from 'react-router-dom'
 let text = `React interfaol foydalanuvchi interfeyslarni qiyinchiliksiz yaratish imkonini beradi. Ilovangizdagi har bir holat uchun oddiy ko'rinishni loyihalashtiring va react sizning ma'lumotlaringizni faqat o'zgartirgan tarkibiy qismlarni belgilab ularni samarali ravishda yangilaydi.
 Deklarativ ko'rinishlar sizning kodingizni oldindan bashorat qilish va xatoliklarni onsonroq aniqlashga yordam beradi.`;
 const myArr = text.toLowerCase().split("");
-// console.log(myArr.length);
+console.log(myArr.length);
 let res=myArr.length;
 console.log(res);
+
 function Typing() {
   const [inputText, setInputText] = useState("");
   const [counter, setCounter]=useState(30);
